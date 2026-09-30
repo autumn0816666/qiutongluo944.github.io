@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qiutong Luo | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f8fc;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4b3f8f;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #4b3f8f;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f2f0ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 10px;
+            color: #2d2754;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: 500;
+            color: #5c5196;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #555;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #4b3f8f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #372d70;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 45px;
+            color: #2d2754;
+        }
+
+        /* About */
+        .about {
+            background-color: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 22px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            font-weight: 600;
+        }
+
+        /* Projects */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #4b3f8f;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #555;
+        }
+
+        /* Experience */
+        .experience-card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .experience-card h3 {
+            color: #4b3f8f;
+        }
+
+        .experience-card h4 {
+            margin: 5px 0 12px;
+            color: #555;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+        }
+
+        /* Education */
+        .education {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        .contact a {
+            color: #4b3f8f;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #2d2754;
+            color: white;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">QL</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Personal Statement -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <h1>QIUTONG LUO</h1>
+
+            <h2>Leadership & Management Student</h2>
+
+            <p>
+                I am a Leadership and Management student at Rutgers Business School
+                passionate about developing leadership, teamwork, and project management
+                skills for my future career.
+            </p>
+
+            <a href="#projects" class="button">View My Projects</a>
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section>
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+            <p>
+                I am currently pursuing a Bachelor of Science in Leadership and
+                Management at Rutgers Business School. Through academic projects,
+                internships, and leadership experiences, I have developed skills in
+                teamwork, organization, communication, and project coordination.
+                I enjoy working with others, learning new skills, and finding
+                effective ways to accomplish team goals.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Leadership</div>
+
+            <div class="skill">Teamwork</div>
+
+            <div class="skill">Project Management</div>
+
+            <div class="skill">Task Allocation</div>
+
+            <div class="skill">Communication</div>
+
+            <div class="skill">Group Facilitation</div>
+
+            <div class="skill">Conflict Resolution</div>
+
+            <div class="skill">Resume Screening</div>
+
+            <div class="skill">Candidate Evaluation</div>
+
+            <div class="skill">Organization</div>
+
+            <div class="skill">English & Chinese</div>
+
+            <div class="skill">Microsoft Office</div>
+
+        </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>Campus Collective</h3>
+
+                <p>
+                    Developed a business concept focused on providing affordable
+                    dorm supplies and trendy snacks for college students.
+                    The project included product selection, pricing,
+                    marketing ideas, and biweekly campus events.
+                </p>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Marketing Project</h3>
+
+                <p>
+                    Applied marketing concepts to analyze consumer behavior
+                    and explore how businesses can better understand and
+                    respond to their target customers.
+                </p>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Academic Writing Project</h3>
+
+                <p>
+                    Created a personal narrative exploring the meaning of
+                    place and how my grandparents' home influenced my
+                    childhood experiences and personal development.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+
+
+        <div class="experience-card">
+
+            <h3>Program Manager Intern</h3>
+
+            <h4>Hefei Lenovo Information Technology / Lenovo-related Company | Summer 2026</h4>
+
+            <ul>
+                <li>Reviewed and organized training materials to support internal program development.</li>
+                <li>Participated in weekly meetings with mentors and senior team members.</li>
+                <li>Developed a better understanding of program coordination and workplace operations.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>Human Resources Intern</h3>
+
+            <h4>Hefei Zitong Technology Biotechnology Co., Ltd. | Apr 2025 – Aug 2025</h4>
+
+            <ul>
+                <li>Screened and evaluated 55+ resumes based on job descriptions and hiring criteria.</li>
+                <li>Shortlisted 15+ qualified candidates for further interview consideration.</li>
+                <li>Coordinated interview materials and tracked candidate progress across three recruitment stages.</li>
+                <li>Organized applicant information for 50+ candidates throughout the hiring process.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>Head of Environmental Protection Organization</h3>
+
+            <h4>Hefei No. 1 High School | Sep 2023 – May 2025</h4>
+
+            <ul>
+                <li>Managed event logistics and speaker communication across multiple event phases.</li>
+                <li>Led a student environmental awareness lecture attended by 20+ participants.</li>
+                <li>Facilitated two interactive discussion sessions to encourage student participation.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+    <section>
+        <h2 class="section-title">Education</h2>
+
+        <div class="education">
+
+            <h3>Rutgers Business School</h3>
+
+            <p>
+                Rutgers, The State University of New Jersey
+            </p>
+
+            <p>
+                Bachelor of Science in Leadership and Management
+            </p>
+
+            <p>
+                Expected Graduation: May 2029
+            </p>
+
+            <br>
+
+            <p><strong>Relevant Coursework:</strong></p>
+
+            <p>
+                Intro to Management, Intro to Marketing, Intro to Business,
+                Calculus, Microeconomics, Macroeconomics
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <h2 class="section-title">Contact</h2>
+
+        <p>Email: 
+            <a href="mailto:ql302@scarletmail.rutgers.edu">
+                ql302@scarletmail.rutgers.edu
+            </a>
+        </p>
+
+        <p>Phone: (508) 649-8856</p>
+
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/" target="_blank">
+                LinkedIn Profile
+            </a>
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Qiutong Luo. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
